@@ -1,10 +1,7 @@
-import requests
-import os
 import re
+from helpers import get_input
 
-cookies = dict(session=os.environ.get('SESSION_ID'))
-r = requests.get('https://adventofcode.com/2020/day/4/input', cookies=cookies)
-input = [' '.join(each.split('\n')) for each in r.text.strip().split('\n\n')]
+input = [' '.join(each.split('\n')) for each in get_input(4).split('\n\n')]
 input_dict = [dict([pair.split(':') for pair in passport.split(' ')])
               for passport in input]
 

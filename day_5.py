@@ -1,9 +1,6 @@
-import requests
-import os
+from helpers import get_input
 
-cookies = dict(session=os.environ.get('SESSION_ID'))
-r = requests.get('https://adventofcode.com/2020/day/5/input', cookies=cookies)
-input = r.text.strip().split('\n')
+input = get_input(5).split('\n')
 
 
 def decipher_binary(binary, total, hi, lo):

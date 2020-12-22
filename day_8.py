@@ -1,10 +1,7 @@
 import copy
-import os
-import requests
+from helpers import get_input
 
-cookies = dict(session=os.environ.get('SESSION_ID'))
-r = requests.get('https://adventofcode.com/2020/day/8/input', cookies=cookies)
-input = r.text.strip().split('\n')
+input = get_input(8).split('\n')
 
 # Part 1
 

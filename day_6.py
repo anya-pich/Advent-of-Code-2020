@@ -1,9 +1,6 @@
-import requests
-import os
+from helpers import get_input
 
-cookies = dict(session=os.environ.get('SESSION_ID'))
-r = requests.get('https://adventofcode.com/2020/day/6/input', cookies=cookies)
-input = r.text.strip().split('\n\n')
+input = get_input(6).split('\n\n')
 
 group_strings = [''.join(group.split('\n')) for group in input]
 sum_1 = 0

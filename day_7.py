@@ -1,10 +1,7 @@
-import requests
-import os
 import re
+from helpers import get_input
 
-cookies = dict(session=os.environ.get('SESSION_ID'))
-r = requests.get('https://adventofcode.com/2020/day/7/input', cookies=cookies)
-input = r.text.strip().split('\n')
+input = get_input(7).split('\n')
 
 rules = dict([line.split(' bags contain ') for line in input])
 
